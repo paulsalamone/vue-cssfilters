@@ -1,5 +1,5 @@
 <template>
-  <h2>footer</h2>
+  <p>©2022 Paul Salamone Dev & Design</p>
 </template>
 
 <script>

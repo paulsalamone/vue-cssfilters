@@ -1,8 +1,7 @@
 <template>
   <Header />
   <main>
-    <Photo :photos="photos" :selected="selected" />
-    <Filters />
+    <Photo :photos="photos" :selected="selected" :filters="filters" />
   </main>
   <Footer />
 </template>
@@ -10,7 +9,6 @@
 <script>
 import Header from "./components/Header.vue";
 import Photo from "./components/Photo.vue";
-import Filters from "./components/Filters.vue";
 import Footer from "./components/Footer.vue";
 
 export default {
@@ -18,12 +16,11 @@ export default {
   components: {
     Header,
     Photo,
-    Filters,
     Footer,
   },
   data() {
     return {
-      selected: 5,
+      selected: 0,
     };
   },
   created() {
@@ -35,6 +32,23 @@ export default {
       "./src/assets/dog.jpg",
     ];
   },
+  filters: [
+    {
+      id: 0,
+      type: "blur",
+      amount: "3px",
+    },
+    {
+      id: 1,
+      type: "contrast",
+      amount: "200%",
+    },
+    {
+      id: 2,
+      type: "grayscale",
+      amount: "50%",
+    },
+  ],
 };
 </script>
 
